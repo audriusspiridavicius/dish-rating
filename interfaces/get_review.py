@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 from .review import IReview
-from interfaces.rating import RatingWithReview
+from rating_and_review import RatingWithReview
 
 class IReviewsStrategy(ABC):
     
