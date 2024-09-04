@@ -14,7 +14,7 @@ class IRating(ABC):
     def rating(self) -> float:
         return self._rating
     
-    
+    @rating.setter
     def set_rating(self, rating_value:float) -> None:
         
         if rating_value < self.min_rating_value:
@@ -24,11 +24,5 @@ class IRating(ABC):
         
         self._rating = rating_value    
         
-@dataclass
-class RatingWithReview(IRating):
-    review:IReview = field(default_factory=Review)
-        
-@dataclass    
-class IDishRating(RatingWithReview):
-    pass
 
+        
