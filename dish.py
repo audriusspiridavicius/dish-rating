@@ -1,12 +1,9 @@
 from dataclasses import dataclass
 from interfaces.dish import IDish
 
-@dataclass
+
 class Dish(IDish):
-    
-    def __init__(self) -> None:
-        super().__init__()
-    
+        
     def get_price(self) -> float:
         return self.price
 
