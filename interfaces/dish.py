@@ -1,10 +1,10 @@
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
-from ..enumerations.dish_type import DishType
+from enumerations.dish_type import DishType
 from .rating import IDishRating
 from .review import IReview
 from .get_review import IReviewsStrategy
-from ..review_strategy import AllReviews
+from review_strategy import AllReviews
 
 dataclass
 class IDish(ABC):

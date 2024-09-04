@@ -1,4 +1,4 @@
-from .interfaces.review import IReview
+from interfaces.review import IReview
 
 
 class Review(IReview):

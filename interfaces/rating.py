@@ -1,7 +1,7 @@
-from abc import ABC, abstractmethod
-from dataclasses import dataclass
-from .dish import IDish
-from ..rating import RatingWithReview
+from abc import ABC
+from dataclasses import dataclass, field
+from review import Review, IReview
+
 
 @dataclass
 class IRating(ABC):
@@ -24,7 +24,11 @@ class IRating(ABC):
         
         self._rating = rating_value    
         
+@dataclass
+class RatingWithReview(IRating):
+    review:IReview = field(default_factory=Review)
         
 @dataclass    
 class IDishRating(RatingWithReview):
     pass
+

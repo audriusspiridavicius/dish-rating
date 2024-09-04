@@ -1,6 +1,7 @@
-from .interfaces.dish import IDish
+from dataclasses import dataclass
+from interfaces.dish import IDish
 
-
+@dataclass
 class Dish(IDish):
     
     def __init__(self) -> None:
