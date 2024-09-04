@@ -1,22 +1,22 @@
 from abc import ABC, abstractmethod
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from enumerations.dish_type import DishType
-from .rating import IDishRating
+from rating_and_review import RatingWithReview
 from .review import IReview
 from .get_review import IReviewsStrategy
 from review_strategy import AllReviews
 
-dataclass
+@dataclass
 class IDish(ABC):
     name:str = ""
     type:DishType = DishType.NONE
     price:float = 0.0
-    ingredients = []
+    ingredients:list = field(default_factory=list)
     cusine:str = ""
-    ratings:list[IDishRating] = []
-    recipes:list = []
+    ratings:list[RatingWithReview] = field(default_factory=list[RatingWithReview])
+    recipes:list = field(default_factory=list)
     
-    review_strategy:IReviewsStrategy = AllReviews()
+    review_strategy:IReviewsStrategy = field(default_factory=AllReviews)
         
     @abstractmethod
     def get_rating(self):
