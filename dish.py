@@ -6,9 +6,9 @@ class Dish(IDish):
         
     def get_price(self) -> float:
         return self.price
+    
+    def get_absolute_rating(self):
 
-    def get_rating(self):
-        
         number_of_records = len(self.ratings)
         
         average_ranting = 0
@@ -18,5 +18,8 @@ class Dish(IDish):
             average_ranting = round(average_ranting, 2)
                 
         return average_ranting
+    
+    def __str__(self) -> str:
+        return f"{self.name} {self.cusine} {self.price} {self.get_absolute_rating()} {self.type}"
 
     
