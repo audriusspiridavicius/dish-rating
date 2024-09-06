@@ -6,15 +6,15 @@ from review import Review, IReview
 @dataclass
 class IRating(ABC):
     
-    _rating:float = 0.0
+    rating:float = 0.0
     max_rating_value:float = 10.0
     min_rating_value:float = 0.0
     
     @property
-    def rating(self) -> float:
-        return self._rating
+    def get_rating(self) -> float:
+        return self.rating
     
-    @rating.setter
+    @get_rating.setter
     def set_rating(self, rating_value:float) -> None:
         
         if rating_value < self.min_rating_value:
@@ -22,7 +22,7 @@ class IRating(ABC):
         elif rating_value > self.max_rating_value:
             rating_value = self.max_rating_value
         
-        self._rating = rating_value    
+        self.rating = rating_value    
         
 
         

@@ -8,15 +8,15 @@ from interfaces.dish import IDish
 
 @pytest.fixture
 def low_rating():
-    return RatingWithReview(review=Review("low rating", "poor quality!"), _rating=2.3)
+    return RatingWithReview(review=Review("low rating", "poor quality!"), rating=2.3)
 
 @pytest.fixture
 def good_rating():
-    return RatingWithReview(review=Review("good rating", "amazing product quality!"), _rating=9.5)
+    return RatingWithReview(review=Review("good rating", "amazing product quality!"), rating=9.5)
 
 @pytest.fixture
 def avarage_rating():
-    return RatingWithReview(review=Review("avarage rating", "avarage quality!"), _rating=6.5)
+    return RatingWithReview(review=Review("avarage rating", "avarage quality!"), rating=6.5)
 
 
 @pytest.fixture
